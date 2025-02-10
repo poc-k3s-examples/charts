@@ -3,7 +3,13 @@ domain: k3s.io
 vault:
   chartVersion: 0.27.0
   enabled: true
+  namespace: vault-server
   address: "http://vault-service.vault-server.svc.cluster.local:8200"
 
 gitops:
   namespace: argocd
+
+external_secrets:
+  enabled: true
+  namespace: external-secrets
+  chartVersion: 0.14.1

@@ -16,7 +16,7 @@ spec:
               elements:
               {{- if .Values.vault.enabled }}
                 - application: vault-service
-                  namespace: vault-server
+                  namespace: "{{ .Values.vault.namespace }}"
                   chart: 
                     name: vault
                     url: https://helm.releases.hashicorp.com
@@ -39,6 +39,14 @@ spec:
                         limits:
                           memory: "168Mi"
                           cpu: "150m"
+              {{- end }}
+              {{- if .Values.external_secrets.enabled }}
+                - application: external-secrets-service
+                  namespace: "{{ .Values.external_secrets.namespace }}"
+                  chart: 
+                    name: external-secrets
+                    url: https://charts.external-secrets.io
+                    version: "{{ .Values.external_secrets.chartVersion }}"
               {{- end }}
   template:
     metadata:
