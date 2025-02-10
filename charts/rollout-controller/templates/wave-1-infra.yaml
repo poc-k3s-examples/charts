@@ -55,7 +55,20 @@ spec:
                     name: kubernetes-dashboard
                     url: https://kubernetes.github.io/dashboard/
                     version: "{{ .Values.dashboard.chartVersion }}"
+                  values: |
+                    app:
+                      ingress:
+                        enabled: true
+                        hosts:
+                          - dashboard.rollcage.io
+                        ingressClassName: traefik
+                        useDefaultAnnotations: true
+                        pathType: ImplementationSpecific
+                        path: /
+                        tls:
+                          enabled: false
               {{- end }}
+
   template:
     metadata:
       name: "{{ `{{ .application }}` }}"
