@@ -11,10 +11,7 @@ spec:
   generators:
     - matrix:
         generators:
-          - clusters:
-              selector:
-                matchLabels:
-                  cluster: in-cluster
+          - clusters: {}
           - list:
               elements:
               {{- if .Values.vault.enabled }}
@@ -65,11 +62,11 @@ spec:
         syncOptions:
           - CreateNamespace=true
           - Validate=false
-  # templatePatch: |
-  #   spec:
-  #     source:
-  #       helm:
-  #       {{ `{{- if (index . "values") }}` }}
-  #         values: |
-  #           {{ `{{- .values | nindent 12 }}` }}
-  #       {{ `{{- end }}` }}
+  templatePatch: |
+    spec:
+      source:
+        helm:
+        {{ `{{- if (index . "values") }}` }}
+          values: |
+            {{ `{{- .values | nindent 12 }}` }}
+        {{ `{{- end }}` }}
