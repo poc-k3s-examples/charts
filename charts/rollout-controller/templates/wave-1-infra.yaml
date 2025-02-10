@@ -17,20 +17,6 @@ spec:
                   cluster: default
           - list:
               elements:
-              {{- if .Values.machinesets.enabled }}
-                - application: machine-sets-manager
-                  namespace: managed-machine-sets
-                  chart: 
-                    name: machinesets
-                    url: https://poc-examples.github.io/charts
-                    version: "{{ .Values.machinesets.chartVersion }}"
-                  values: |
-                    machineset: 
-                      enabled: false
-                    machinesets:
-                      - name: acs
-                        machine_type: Standard_D8s_v3
-              {{- end }}
               {{- if .Values.vault.enabled }}
                 - application: vault-service
                   namespace: vault-server
@@ -57,20 +43,20 @@ spec:
                           memory: "168Mi"
                           cpu: "150m"
               {{- end }}
-              {{- if .Values.external_secrets.enabled }}
-                - application: external-secrets-service
-                  namespace: external-secrets
-                  chart: 
-                    name: external_secrets
-                    url: https://poc-examples.github.io/charts
-                    version: "{{ .Values.external_secrets.chartVersion }}"
-                  values: |
-                    namespace: "{{ .Values.external_secrets.namespace }}"
-                    gitops:
-                      namespace: "{{ .Values.gitops.namespace }}"
-                    subscription:
-                      channel: stable
-              {{- end }}
+              # {{- if .Values.external_secrets.enabled }}
+              #   - application: external-secrets-service
+              #     namespace: external-secrets
+              #     chart: 
+              #       name: external_secrets
+              #       url: https://poc-examples.github.io/charts
+              #       version: "{{ .Values.external_secrets.chartVersion }}"
+              #     values: |
+              #       namespace: "{{ .Values.external_secrets.namespace }}"
+              #       gitops:
+              #         namespace: "{{ .Values.gitops.namespace }}"
+              #       subscription:
+              #         channel: stable
+              # {{- end }}
   template:
     metadata:
       name: "{{ `{{ .application }}` }}"
