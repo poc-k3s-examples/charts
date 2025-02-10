@@ -43,20 +43,6 @@ spec:
                           memory: "168Mi"
                           cpu: "150m"
               {{- end }}
-              # {{- if .Values.external_secrets.enabled }}
-              #   - application: external-secrets-service
-              #     namespace: external-secrets
-              #     chart: 
-              #       name: external_secrets
-              #       url: https://poc-examples.github.io/charts
-              #       version: "{{ .Values.external_secrets.chartVersion }}"
-              #     values: |
-              #       namespace: "{{ .Values.external_secrets.namespace }}"
-              #       gitops:
-              #         namespace: "{{ .Values.gitops.namespace }}"
-              #       subscription:
-              #         channel: stable
-              # {{- end }}
   template:
     metadata:
       name: "{{ `{{ .application }}` }}"
