@@ -49,7 +49,7 @@ spec:
     spec:
       destination:
         namespace: "{{ `{{ .namespace }}` }}"
-        server: "{{ `{{ .server }}` }}"
+        server: "https://kubernetes.default.svc"
       source:
         chart: "{{ `{{ .chart.name }}` }}"
         targetRevision: "{{ `{{ .chart.version }}` }}"
