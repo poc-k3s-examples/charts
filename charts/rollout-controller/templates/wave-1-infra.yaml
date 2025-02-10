@@ -49,7 +49,7 @@ spec:
     spec:
       destination:
         namespace: "{{ `{{ .namespace }}` }}"
-        server: "https://kubernetes.default.svc"
+        server: "{{ `{{ .server }}` }}"
       source:
         chart: "{{ `{{ .chart.name }}` }}"
         targetRevision: "{{ `{{ .chart.version }}` }}"
@@ -65,11 +65,11 @@ spec:
         syncOptions:
           - CreateNamespace=true
           - Validate=false
-  templatePatch: |
-    spec:
-      source:
-        helm:
-        {{ `{{- if (index . "values") }}` }}
-          values: |
-            {{ `{{- .values | nindent 12 }}` }}
-        {{ `{{- end }}` }}
+  # templatePatch: |
+  #   spec:
+  #     source:
+  #       helm:
+  #       {{ `{{- if (index . "values") }}` }}
+  #         values: |
+  #           {{ `{{- .values | nindent 12 }}` }}
+  #       {{ `{{- end }}` }}
