@@ -61,12 +61,14 @@ spec:
                         enabled: true
                         hosts:
                           - dashboard.rollcage.io
-                        ingressClassName: traefik
-                        useDefaultAnnotations: true
-                        pathType: ImplementationSpecific
+                        useDefaultAnnotations: false
+                        pathType: Prefix
                         path: /
                         tls:
                           enabled: false
+                        annotations:
+                          kubernetes.io/ingress.class: traefik
+
               {{- end }}
 
   template:
