@@ -48,6 +48,14 @@ spec:
                     url: https://charts.external-secrets.io
                     version: "{{ .Values.external_secrets.chartVersion }}"
               {{- end }}
+              {{- if .Values.dashboard.enabled }}
+                - application: kubernetes-dashboard-service
+                  namespace: "{{ .Values.dashboard.namespace }}"
+                  chart: 
+                    name: kubernetes-dashboard
+                    url: https://kubernetes.github.io/dashboard/
+                    version: "{{ .Values.dashboard.chartVersion }}"
+              {{- end }}
   template:
     metadata:
       name: "{{ `{{ .application }}` }}"

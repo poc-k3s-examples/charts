@@ -1,5 +1,10 @@
 domain: k3s.io
 
+dashboard:
+  enabled: true
+  namespace: kubernetes-dashboard
+  chartVersion: 7.10.4
+
 vault:
   chartVersion: 0.27.0
   enabled: true
