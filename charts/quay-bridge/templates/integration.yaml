@@ -1,0 +1,27 @@
+apiVersion: quay.redhat.com/v1
+kind: QuayIntegration
+metadata:
+  name: quay
+spec:
+  clusterID: openshift
+  credentialsSecret:
+    name: quay-credentials
+    namespace: "{{ .Values.namespace }}"
+  denylistNamespaces:
+    - quay-registry
+    - dedicated-admin
+    - keycloak
+    - external-secrets
+    - secrets-connectors
+    - cert-manager
+    - secrets-manager
+    - ack-system
+    - upbound-system
+    - gitlab-system
+    - backstage
+    - vault-server
+    - rhacs-operator
+    - stackrox
+  insecureRegistry: true
+  quayHostname: 'https://quay-quay-quay-registry.{{ .Values.domain }}'
+  scheduledImageStreamImport: true
