@@ -3,7 +3,7 @@ domain: k3s.io
 openebs:
   enabled: true
   namespace: openebs
-  chartVersion: 3.1.6
+  chartVersion: 4.1.3
 
 vault:
   chartVersion: 0.27.0
