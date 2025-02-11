@@ -23,6 +23,8 @@ spec:
                     url: https://kubernetes-sigs.github.io/node-feature-discovery/charts
                     version: "{{ .Values.nfd.chartVersion }}"
                   values: |
+                    master:
+                      enable: false
                     worker:
                       config:
                         core:
