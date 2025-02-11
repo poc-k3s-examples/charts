@@ -1,9 +1,9 @@
 domain: k3s.io
 
-dashboard:
+efs_driver:
   enabled: true
-  namespace: kubernetes-dashboard
-  chartVersion: 7.10.4
+  namespace: kube-system
+  chartVersion: 3.1.6
 
 vault:
   chartVersion: 0.27.0
