@@ -1,8 +1,8 @@
 domain: k3s.io
 
-efs_driver:
+openebs:
   enabled: true
-  namespace: kube-system
+  namespace: openebs
   chartVersion: 3.1.6
 
 vault:

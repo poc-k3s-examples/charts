@@ -48,26 +48,13 @@ spec:
                     url: https://charts.external-secrets.io
                     version: "{{ .Values.external_secrets.chartVersion }}"
               {{- end }}
-              {{- if .Values.efs_driver.enabled }}
-                - application: aws-cis-driver
-                  namespace: "{{ .Values.efs_driver.namespace }}"
+              {{- if .Values.openebs.enabled }}
+                - application: openebs-driver
+                  namespace: "{{ .Values.openebs.namespace }}"
                   chart: 
-                    name: aws-efs-csi-driver
-                    url: https://kubernetes-sigs.github.io/aws-efs-csi-driver
-                    version: "{{ .Values.efs_driver.chartVersion }}"
-                  values: |
-                    node:
-                      env:
-                        - name: AWS_ACCESS_KEY_ID
-                          valueFrom:
-                            secretKeyRef:
-                              name: aws-credentials
-                              key: aws_access_key_id
-                        - name: AWS_SECRET_ACCESS_KEY
-                          valueFrom:
-                            secretKeyRef:
-                              name: aws-credentials
-                              key: aws_secret_access_key
+                    name: openebs
+                    url: https://openebs.github.io/openebs
+                    version: "{{ .Values.openebs.chartVersion }}"
               {{- end }}
 
   template:
