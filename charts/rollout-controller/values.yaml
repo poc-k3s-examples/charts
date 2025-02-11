@@ -22,4 +22,4 @@ nfd:
 gfd:
   enabled: true
   namespace: gfd
-  chartVersion: 0.17.1
+  chartVersion: 0.17.0
