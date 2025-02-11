@@ -51,6 +51,7 @@ spec:
                   values: |
                     gfd:
                       enabled: true
+                    runtimeClassName: nvidia
               {{- end }}
   template:
     metadata:
