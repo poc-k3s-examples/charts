@@ -22,6 +22,20 @@ spec:
                     name: node-feature-discovery
                     url: https://kubernetes-sigs.github.io/node-feature-discovery/charts
                     version: "{{ .Values.nfd.chartVersion }}"
+                  values: |
+                    worker:
+                      config:
+                        core:
+                          sleepInterval: 60s
+                        sources:
+                          pci:
+                            deviceClassWhitelist:
+                              - "0200"
+                              - "03"
+                              - "12"
+                            deviceLabelFields:
+                              - "vendor"
+
               {{- end }}
   template:
     metadata:
