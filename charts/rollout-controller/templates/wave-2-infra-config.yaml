@@ -40,6 +40,15 @@ spec:
                               - "vendor"
 
               {{- end }}
+              {{- if .Values.gfd.enabled }}
+                - application: gpu-feature-discovery-service
+                  namespace: "{{ .Values.gfd.namespace }}"
+                  wave: "-2"
+                  chart: 
+                    name: gpu-feature-discovery
+                    url: https://nvidia.github.io/k8s-device-plugin
+                    version: "{{ .Values.gfd.chartVersion }}"
+              {{- end }}
   template:
     metadata:
       name: "{{ `{{ .application }}` }}"
