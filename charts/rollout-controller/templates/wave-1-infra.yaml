@@ -48,15 +48,6 @@ spec:
                     url: https://charts.external-secrets.io
                     version: "{{ .Values.external_secrets.chartVersion }}"
               {{- end }}
-              {{- if .Values.openebs.enabled }}
-                - application: openebs-driver
-                  namespace: "{{ .Values.openebs.namespace }}"
-                  chart: 
-                    name: openebs
-                    url: https://openebs.github.io/openebs
-                    version: "{{ .Values.openebs.chartVersion }}"
-              {{- end }}
-
   template:
     metadata:
       name: "{{ `{{ .application }}` }}"
