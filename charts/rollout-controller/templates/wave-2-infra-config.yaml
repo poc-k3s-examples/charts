@@ -48,6 +48,9 @@ spec:
                     name: nvidia-device-plugin
                     url: https://nvidia.github.io/k8s-device-plugin
                     version: "{{ .Values.gfd.chartVersion }}"
+                  values: |
+                    gfd:
+                      enabled: true
               {{- end }}
   template:
     metadata:
