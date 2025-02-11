@@ -25,8 +25,6 @@ spec:
                   values: |
                     featureGates:
                       NodeFeatureGroupAPI: true
-                    master:
-                      enable: false
                     worker:
                       config:
                         core:
