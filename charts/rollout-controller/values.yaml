@@ -13,3 +13,9 @@ external_secrets:
   enabled: true
   namespace: external-secrets
   chartVersion: 0.14.1
+
+
+headlamp:
+  enabled: true
+  namespace: kube-system
+  chartVersion: 0.28.1

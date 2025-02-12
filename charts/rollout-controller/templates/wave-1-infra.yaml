@@ -48,6 +48,14 @@ spec:
                     url: https://charts.external-secrets.io
                     version: "{{ .Values.external_secrets.chartVersion }}"
               {{- end }}
+              {{- if .Values.headlamp.enabled }}
+                - application: headlamp-service
+                  namespace: "{{ .Values.headlamp.namespace }}"
+                  chart: 
+                    name: headlamp
+                    url: https://headlamp-k8s.github.io/headlamp
+                    version: "{{ .Values.headlamp.chartVersion }}"
+              {{- end }}
   template:
     metadata:
       name: "{{ `{{ .application }}` }}"
