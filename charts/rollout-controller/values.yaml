@@ -13,13 +13,3 @@ external_secrets:
   enabled: true
   namespace: external-secrets
   chartVersion: 0.14.1
-
-nfd:
-  enabled: true
-  namespace: nfd
-  chartVersion: 0.17.1
-
-gfd:
-  enabled: true
-  namespace: gfd
-  chartVersion: 0.17.0
