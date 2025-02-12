@@ -13,7 +13,10 @@ external_secrets:
   enabled: true
   namespace: external-secrets
   chartVersion: 0.14.1
-
+  connectors:
+    chartVersion: 0.1.3
+  k8sConnector:
+    enabled: false
 
 headlamp:
   enabled: true
