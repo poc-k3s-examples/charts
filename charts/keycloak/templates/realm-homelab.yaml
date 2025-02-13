@@ -1,0 +1,11 @@
+apiVersion: realm.keycloak.crossplane.io/v1alpha1
+kind: Realm
+metadata:
+  name: homelab-realm
+spec:
+  providerConfigRef:
+    name: provider-keycloak
+  realm: homelab
+  displayName: Homelab Authentication Realm
+  enabled: true
+  internalId: homelab
