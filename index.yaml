@@ -3,6 +3,16 @@ entries:
   crossplane-config:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-02-13T06:50:20.558462818Z"
+    description: A Helm chart for Kubernetes
+    digest: 4d90c06e9b4b0ad1c9f546ddd09b874f2384eca66eb66acfcb13e096cc9f2f1b
+    name: crossplane-config
+    type: application
+    urls:
+    - https://github.com/poc-k3s-examples/charts/releases/download/crossplane-config-0.0.10/crossplane-config-0.0.10.tgz
+    version: 0.0.10
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-02-13T06:02:03.489007439Z"
     description: A Helm chart for Kubernetes
     digest: 3c5f267319e4b39c7379ebf35cb34d485872add446bea7047a9975f771d775d6
@@ -90,6 +100,17 @@ entries:
     type: application
     urls:
     - https://github.com/poc-k3s-examples/charts/releases/download/crossplane-config-0.0.1/crossplane-config-0.0.1.tgz
+    version: 0.0.1
+  keycloak:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-02-13T06:50:20.649460442Z"
+    description: A Helm chart for Kubernetes
+    digest: 761bb362c22b8e2678ba1c82a97616120ffe1081290522cc3730e38ba8210109
+    name: keycloak
+    type: application
+    urls:
+    - https://github.com/poc-k3s-examples/charts/releases/download/keycloak-0.0.1/keycloak-0.0.1.tgz
     version: 0.0.1
   rollout-controller:
   - apiVersion: v2
@@ -502,4 +523,4 @@ entries:
     urls:
     - https://github.com/poc-k3s-examples/charts/releases/download/rollout-controller-0.0.1/rollout-controller-0.0.1.tgz
     version: 0.0.1
-generated: "2025-02-13T06:02:03.489184138Z"
+generated: "2025-02-13T06:50:20.649610602Z"
