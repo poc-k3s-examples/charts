@@ -5,7 +5,8 @@ metadata:
 spec:
   providerConfigRef:
     name: provider-keycloak
-  realm: homelab
-  displayName: Homelab Authentication Realm
-  enabled: true
-  internalId: homelab
+  forProvider:
+    realm: homelab
+    displayName: Homelab Authentication Realm
+    enabled: true
+    internalId: homelab
