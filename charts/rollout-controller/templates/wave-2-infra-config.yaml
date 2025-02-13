@@ -38,7 +38,7 @@ spec:
                   wave: "-2"
                   chart: 
                     name: crossplane-config
-                    url: https://poc-k3s-examples.github.io/supporting-charts
+                    url: https://poc-k3s-examples.github.io/charts
                     version: "{{ .Values.crossplane.configVersion }}"
               {{- end }}
   template:
