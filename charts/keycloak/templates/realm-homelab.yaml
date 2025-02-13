@@ -4,7 +4,7 @@ metadata:
   name: homelab-realm
 spec:
   providerConfigRef:
-    name: provider-keycloak
+    name: keycloak-provider-config
   forProvider:
     realm: homelab
     displayName: Homelab Authentication Realm
