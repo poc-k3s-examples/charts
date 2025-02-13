@@ -3,6 +3,16 @@ entries:
   crossplane-config:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-02-13T05:19:51.540703413Z"
+    description: A Helm chart for Kubernetes
+    digest: 14e8c35971e3568f4d1285b5a1c14cb837c0b7e734b2fb06654bef0bfb1c56ae
+    name: crossplane-config
+    type: application
+    urls:
+    - https://github.com/poc-k3s-examples/charts/releases/download/crossplane-config-0.0.2/crossplane-config-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-02-13T04:33:21.107100213Z"
     description: A Helm chart for Kubernetes
     digest: 32fde43d584586f008787c9461a9bb6cfb4cd0128923c0d60e591b165b04a3c1
@@ -12,6 +22,16 @@ entries:
     - https://github.com/poc-k3s-examples/charts/releases/download/crossplane-config-0.0.1/crossplane-config-0.0.1.tgz
     version: 0.0.1
   rollout-controller:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-02-13T05:19:51.620050762Z"
+    description: A Helm chart for Kubernetes
+    digest: 6545581cdb89db8e819666b573567be17c2b7170c1767e99ebc83060ea0ced14
+    name: rollout-controller
+    type: application
+    urls:
+    - https://github.com/poc-k3s-examples/charts/releases/download/rollout-controller-0.0.39/rollout-controller-0.0.39.tgz
+    version: 0.0.39
   - apiVersion: v2
     appVersion: 1.16.0
     created: "2025-02-13T04:35:30.418119264Z"
@@ -392,4 +412,4 @@ entries:
     urls:
     - https://github.com/poc-k3s-examples/charts/releases/download/rollout-controller-0.0.1/rollout-controller-0.0.1.tgz
     version: 0.0.1
-generated: "2025-02-13T04:35:30.418542496Z"
+generated: "2025-02-13T05:19:51.620391818Z"
