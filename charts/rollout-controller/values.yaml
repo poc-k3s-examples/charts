@@ -28,3 +28,8 @@ crossplane:
   namespace: crossplane-system
   chartVersion: 1.19.0
   configVersion: 0.0.9
+
+keycloak:
+  enabled: true
+  namespace: keycloak
+  chartVersion: 0.0.1
