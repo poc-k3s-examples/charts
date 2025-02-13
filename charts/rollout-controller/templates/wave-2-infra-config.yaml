@@ -32,6 +32,15 @@ spec:
                     k8s:
                       enabled: "{{ .Values.external_secrets.k8sConnector.enabled }}"
               {{- end }}
+              {{- if .Values.crossplane.enabled }}
+                - application: crossplane-config
+                  namespace: crossplane-system
+                  wave: "-2"
+                  chart: 
+                    name: crossplane-config
+                    url: https://poc-k3s-examples.github.io/supporting-charts
+                    version: "{{ .Values.crossplane.configVersion }}"
+              {{- end }}
   template:
     metadata:
       name: "{{ `{{ .application }}` }}"
