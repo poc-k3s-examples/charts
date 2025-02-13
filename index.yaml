@@ -3,6 +3,16 @@ entries:
   crossplane-config:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-02-13T05:57:55.939964135Z"
+    description: A Helm chart for Kubernetes
+    digest: 0e68a8e440610b32bc54b0303419e3bd01ba8de49b9d443b7e1d02a17fce2dda
+    name: crossplane-config
+    type: application
+    urls:
+    - https://github.com/poc-k3s-examples/charts/releases/download/crossplane-config-0.0.8/crossplane-config-0.0.8.tgz
+    version: 0.0.8
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-02-13T05:42:52.273204274Z"
     description: A Helm chart for Kubernetes
     digest: 41a0fe1226b1afee44b185e70cb0cada2c37f6ff033a99dfd9192db875a38382
@@ -482,4 +492,4 @@ entries:
     urls:
     - https://github.com/poc-k3s-examples/charts/releases/download/rollout-controller-0.0.1/rollout-controller-0.0.1.tgz
     version: 0.0.1
-generated: "2025-02-13T05:42:52.273316874Z"
+generated: "2025-02-13T05:57:55.940110858Z"
