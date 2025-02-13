@@ -56,6 +56,14 @@ spec:
                     url: https://headlamp-k8s.github.io/headlamp
                     version: "{{ .Values.headlamp.chartVersion }}"
               {{- end }}
+              {{- if .Values.crossplane.enabled }}
+                - application: crossplane-service
+                  namespace: "{{ .Values.crossplane.namespace }}"
+                  chart: 
+                    name: crossplane
+                    url: https://charts.crossplane.io/stable
+                    version: "{{ .Values.crossplane.chartVersion }}"
+              {{- end }}
   template:
     metadata:
       name: "{{ `{{ .application }}` }}"

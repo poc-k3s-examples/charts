@@ -22,3 +22,8 @@ headlamp:
   enabled: true
   namespace: kube-system
   chartVersion: 0.28.1
+
+crossplane:
+  enabled: true
+  namespace: crossplane-system
+  chartVersion: 1.19.0
