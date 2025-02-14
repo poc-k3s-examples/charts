@@ -60,7 +60,7 @@ spec:
                       oidc:
                         clientID: "homelab"
                         clientSecret: "homelabclientsecret"
-                        issuerURL: "http://keycloak.rollcage.io/realms/homelab"
+                        issuerURL: "https://keycloak.rollcage.io/realms/homelab"
                         scopes: "email,profile,groups"
               {{- end }}
               {{- if .Values.crossplane.enabled }}

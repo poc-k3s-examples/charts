@@ -32,9 +32,4 @@ crossplane:
 keycloak:
   enabled: true
   namespace: keycloak
-  chartVersion: 0.0.12
-
-dex: 
-  enabled: true
-  namespace: dex
-  chartVersion: 0.20.0
+  chartVersion: 0.0.15
