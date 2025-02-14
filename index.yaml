@@ -335,6 +335,16 @@ entries:
   rollout-controller:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-02-14T20:40:32.488880537Z"
+    description: A Helm chart for Kubernetes
+    digest: b791307722caaa4352f4008ba8abcf1aa2972e08900e2f9b2906a54e8b99d413
+    name: rollout-controller
+    type: application
+    urls:
+    - https://github.com/poc-k3s-examples/charts/releases/download/rollout-controller-0.0.49/rollout-controller-0.0.49.tgz
+    version: 0.0.49
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-02-14T17:02:08.134747049Z"
     description: A Helm chart for Kubernetes
     digest: 05180d02274deba12b33bf7f6714d5221e1919c4e428c4ff57af0e558c4521dd
@@ -813,4 +823,4 @@ entries:
     urls:
     - https://github.com/poc-k3s-examples/charts/releases/download/rollout-controller-0.0.1/rollout-controller-0.0.1.tgz
     version: 0.0.1
-generated: "2025-02-14T20:24:41.446277999Z"
+generated: "2025-02-14T20:40:32.489467222Z"
