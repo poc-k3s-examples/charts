@@ -33,3 +33,8 @@ keycloak:
   enabled: true
   namespace: keycloak
   chartVersion: 0.0.1
+
+dex: 
+  enabled: true
+  namespace: dex
+  chartVersion: 0.20.0
