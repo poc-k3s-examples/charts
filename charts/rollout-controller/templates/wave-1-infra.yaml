@@ -58,7 +58,7 @@ spec:
                   values: |
                     config:
                       oidc:
-                        clientID: "homelab
+                        clientID: "homelab"
                         clientSecret: "homelabclientsecret"
                         issuerURL: "http://keycloak.rollcage.io/realms/homelab"
                         scopes: "email,profile"
