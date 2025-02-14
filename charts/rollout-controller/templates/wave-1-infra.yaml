@@ -61,7 +61,7 @@ spec:
                         clientID: "homelab"
                         clientSecret: "homelabclientsecret"
                         issuerURL: "http://keycloak.rollcage.io/realms/homelab"
-                        scopes: "email,profile"
+                        scopes: "email,profile,groups"
               {{- end }}
               {{- if .Values.crossplane.enabled }}
                 - application: crossplane-service
