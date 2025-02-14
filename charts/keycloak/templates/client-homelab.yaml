@@ -12,7 +12,10 @@ spec:
     realmIdRef:
       name: homelab
 
-    clientSecretSecretRef: secret-name
+    clientSecretSecretRef:
+      key: CLIENT_SECRET
+      name: homelab-client-secret
+      namespace: keycloak
 
     # Basic client configuration
     name: homelab
@@ -36,55 +39,55 @@ spec:
       - "*"
 
     serviceAccountsEnabled: true
----
-apiVersion: client.keycloak.crossplane.io/v1alpha1
-kind: ProtocolMapper
-metadata:
-  name: homelab-protocol-mapper
-spec:
-  providerConfigRef:
-    name: keycloak-provider-config
-  forProvider:
-    clientId: homelab
-    consentRequired: false
-    config:
-      full.path: "false"
-      id.token.claim: "true"
-      access.token.claim: "true"
-      claim.name: "groups"
-      userinfo.token.claim: "true"
-    name: groups
-    protocol: openid-connect
-    protocolMapper: oidc-group-membership-mapper
-    realmId: homelab
----
-apiVersion: realm.keycloak.crossplane.io/v1alpha1
-kind: OptionalClientScopes
-metadata:
-  name: homelab-optional-client-scopes
-spec:
-  providerConfigRef:
-    name: keycloak-provider-config
-  forProvider:
-    realmId: homelab
-    optionalScopes:
-      - address
-      - phone
-      - offline_access
-      - microprofile-jwt
----
-apiVersion: realm.keycloak.crossplane.io/v1alpha1
-kind: DefaultClientScopes
-metadata:
-  name: homelab-default-client-scopes
-spec:
-  providerConfigRef:
-    name: keycloak-provider-config
-  forProvider:
-    realmId: homelab
-    defaultScopes:
-      - web-origins
-      - acr
-      - profile
-      - roles
-      - email
+# ---
+# apiVersion: client.keycloak.crossplane.io/v1alpha1
+# kind: ProtocolMapper
+# metadata:
+#   name: homelab-protocol-mapper
+# spec:
+#   providerConfigRef:
+#     name: keycloak-provider-config
+#   forProvider:
+#     clientId: homelab
+#     consentRequired: false
+#     config:
+#       full.path: "false"
+#       id.token.claim: "true"
+#       access.token.claim: "true"
+#       claim.name: "groups"
+#       userinfo.token.claim: "true"
+#     name: groups
+#     protocol: openid-connect
+#     protocolMapper: oidc-group-membership-mapper
+#     realmId: homelab
+# ---
+# apiVersion: realm.keycloak.crossplane.io/v1alpha1
+# kind: OptionalClientScopes
+# metadata:
+#   name: homelab-optional-client-scopes
+# spec:
+#   providerConfigRef:
+#     name: keycloak-provider-config
+#   forProvider:
+#     realmId: homelab
+#     optionalScopes:
+#       - address
+#       - phone
+#       - offline_access
+#       - microprofile-jwt
+# ---
+# apiVersion: realm.keycloak.crossplane.io/v1alpha1
+# kind: DefaultClientScopes
+# metadata:
+#   name: homelab-default-client-scopes
+# spec:
+#   providerConfigRef:
+#     name: keycloak-provider-config
+#   forProvider:
+#     realmId: homelab
+#     defaultScopes:
+#       - web-origins
+#       - acr
+#       - profile
+#       - roles
+#       - email
