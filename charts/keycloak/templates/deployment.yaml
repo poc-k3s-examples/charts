@@ -23,6 +23,10 @@ spec:
               value: "edge"
             - name: KC_HEALTH_ENABLED
               value: "true"
+            - name: KC_HOSTNAME
+              value: keycloak.rollcage.io
+            - name: KC_FRONTEND_URL
+              value: https://keycloak.rollcage.io
           envFrom:
             - secretRef:
                 name: keycloak-credentials
