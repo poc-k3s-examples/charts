@@ -47,7 +47,6 @@ spec:
     name: keycloak-provider-config
   forProvider:
     clientId: homelab
-    consentRequired: false
     config:
       full.path: "false"
       id.token.claim: "true"
