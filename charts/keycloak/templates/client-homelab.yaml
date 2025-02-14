@@ -9,8 +9,7 @@ spec:
   providerConfigRef:
     name: keycloak-provider-config
   forProvider:
-    realmIdRef:
-      name: homelab
+    realmId: homelab
 
     clientSecretSecretRef:
       key: CLIENT_SECRET
