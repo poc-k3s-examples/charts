@@ -37,27 +37,27 @@ spec:
       - "*"
 
     serviceAccountsEnabled: true
-# ---
-# apiVersion: client.keycloak.crossplane.io/v1alpha1
-# kind: ProtocolMapper
-# metadata:
-#   name: homelab-protocol-mapper
-# spec:
-#   providerConfigRef:
-#     name: keycloak-provider-config
-#   forProvider:
-#     clientId: homelab
-#     consentRequired: false
-#     config:
-#       full.path: "false"
-#       id.token.claim: "true"
-#       access.token.claim: "true"
-#       claim.name: "groups"
-#       userinfo.token.claim: "true"
-#     name: groups
-#     protocol: openid-connect
-#     protocolMapper: oidc-group-membership-mapper
-#     realmId: homelab
+---
+apiVersion: client.keycloak.crossplane.io/v1alpha1
+kind: ProtocolMapper
+metadata:
+  name: homelab-protocol-mapper
+spec:
+  providerConfigRef:
+    name: keycloak-provider-config
+  forProvider:
+    clientId: homelab
+    consentRequired: false
+    config:
+      full.path: "false"
+      id.token.claim: "true"
+      access.token.claim: "true"
+      claim.name: "groups"
+      userinfo.token.claim: "true"
+    name: groups
+    protocol: openid-connect
+    protocolMapper: oidc-group-membership-mapper
+    realmId: homelab
 # ---
 # apiVersion: realm.keycloak.crossplane.io/v1alpha1
 # kind: OptionalClientScopes
