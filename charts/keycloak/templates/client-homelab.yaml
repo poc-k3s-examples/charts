@@ -24,12 +24,11 @@ spec:
     accessType: confidential
     enabled: true
     fullScopeAllowed: true
-    frontchannelLogout: false
-    authorizationServicesEnabled: true
+    frontchannelLogoutEnabled: false
+    # authorizationServicesEnabled: true
     clientAuthenticatorType: client-secret
 
     # OpenID Connect specific settings
-    protocol: openid-connect
     standardFlowEnabled: true
     directAccessGrantsEnabled: true
     description: Client for Homelab authentication
