@@ -21,6 +21,10 @@ spec:
           env:
             - name: KC_PROXY
               value: "edge"
+            - name: KC_PROXY_HEADERS
+              value: xforwarded
+            - name: KC_HTTP_ENABLED
+              value: "true"
             - name: KC_HEALTH_ENABLED
               value: "true"
             - name: KC_HOSTNAME
