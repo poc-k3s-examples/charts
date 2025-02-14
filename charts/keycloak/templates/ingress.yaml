@@ -4,6 +4,9 @@ metadata:
   name: keycloak-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/use-forwarded-headers: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    cert-manager.io/cluster-issuer: letsencrypt
 spec:
   ingressClassName: nginx
   rules:
@@ -17,3 +20,7 @@ spec:
                 name: keycloak
                 port:
                   number: 8080
+  tls:
+    - secretName: keycloak-service-cert
+      hosts:
+        - keycloak.rollcage.io
