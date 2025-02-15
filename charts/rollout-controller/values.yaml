@@ -27,9 +27,14 @@ crossplane:
   enabled: true
   namespace: crossplane-system
   chartVersion: 1.19.0
-  configVersion: 0.0.18
+  configVersion: 0.0.19
 
 keycloak:
   enabled: true
   namespace: keycloak
   chartVersion: 0.0.15
+
+monitoring:
+  enabled: true
+  namespace: monitoring
+  chartVersion: 69.3.1
