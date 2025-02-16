@@ -25,14 +25,27 @@ spec:
                     url: https://prometheus-community.github.io/helm-charts
                     version: "{{ .Values.monitoring.chartVersion }}"
                   values: |
+                    grafana.ini:
+                      server:
+                        domain: grafana.rollcage.io
+                        #root_url: "%(protocol)s://%(domain)s/"
+                        root_url: https://grafana.rollcage.io/grafana/
+                        serve_from_sub_path: true
                     grafana:
                       ingress:
                         ingressClassName: nginx
                         enabled: true
                         annotations:
                           nginx.ingress.kubernetes.io/rewrite-target: /
+                          # nginx.ingress.kubernetes.io/use-forwarded-headers: "true"
+                          nginx.ingress.kubernetes.io/ssl-redirect: "true"
+                          cert-manager.io/cluster-issuer: letsencrypt
                         hosts:
                           - grafana.rollcage.io
+                        tls:
+                          - secretName: grafana-service-cert
+                            hosts:
+                              - grafana.rollcage.io
               {{- end }}
   template:
     metadata:
