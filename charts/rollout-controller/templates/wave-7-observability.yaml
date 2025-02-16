@@ -24,19 +24,19 @@ spec:
                     name: kube-prometheus-stack
                     url: https://prometheus-community.github.io/helm-charts
                     version: "{{ .Values.monitoring.chartVersion }}"
-                  values: |
-                    grafana:
-                      ingress:
-                        ingressClassName: nginx
-                        enabled: true
-                        annotations:
-                          kubernetes.io/ingress.class: nginx
-                        hosts:
-                          - grafana.rollcage.io
-                        tls:
-                          - secretName: grafana-service-cert
-                            hosts:
-                              - grafana.rollcage.io
+                  # values: |
+                  #   grafana:
+                  #     ingress:
+                  #       ingressClassName: nginx
+                  #       enabled: true
+                  #       annotations:
+                  #         kubernetes.io/ingress.class: nginx
+                  #       hosts:
+                  #         - grafana.rollcage.io
+                  #       tls:
+                  #         - secretName: grafana-service-cert
+                  #           hosts:
+                  #             - grafana.rollcage.io
               {{- end }}
   template:
     metadata:
