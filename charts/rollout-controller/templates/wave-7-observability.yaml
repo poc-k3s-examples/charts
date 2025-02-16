@@ -31,15 +31,8 @@ spec:
                         enabled: true
                         annotations:
                           nginx.ingress.kubernetes.io/rewrite-target: /
-                          nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
-                          nginx.ingress.kubernetes.io/ssl-redirect: "true"
-                          cert-manager.io/cluster-issuer: letsencrypt
                         hosts:
                           - grafana.rollcage.io
-                        tls:
-                          - secretName: grafana-service-cert
-                            hosts:
-                              - grafana.rollcage.io
               {{- end }}
   template:
     metadata:
