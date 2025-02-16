@@ -24,6 +24,34 @@ spec:
                     name: kube-prometheus-stack
                     url: https://prometheus-community.github.io/helm-charts
                     version: "{{ .Values.monitoring.chartVersion }}"
+                  values: |
+                    extraManifests:
+                      - apiVersion: networking.k8s.io/v1
+                        kind: Ingress
+                        metadata:
+                          annotations:
+                            nginx.ingress.kubernetes.io/rewrite-target: /
+                            nginx.ingress.kubernetes.io/use-forwarded-headers: "true"
+                            nginx.ingress.kubernetes.io/ssl-redirect: "true"
+                            cert-manager.io/cluster-issuer: letsencrypt
+                          name: grafana-ingress
+                        spec:
+                          ingressClassName: nginx
+                          rules:
+                          - host: grafana.rollcage.io
+                            http:
+                              paths:
+                              - backend:
+                                  service:
+                                    name: monitoring-service-grafana
+                                    port:
+                                      number: 80
+                                path: /
+                                pathType: Prefix
+                          tls:
+                            - secretName: grafana-service-cert
+                              hosts:
+                                - grafana.rollcage.io
               {{- end }}
   template:
     metadata:
