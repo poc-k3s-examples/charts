@@ -27,6 +27,7 @@ spec:
                   values: |
                     grafana:
                       ingress:
+                        ingressClassName: nginx
                         enabled: true
                         annotations:
                           kubernetes.io/ingress.class: nginx
