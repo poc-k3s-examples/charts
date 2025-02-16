@@ -25,13 +25,13 @@ spec:
                     url: https://prometheus-community.github.io/helm-charts
                     version: "{{ .Values.monitoring.chartVersion }}"
                   values: |
-                    grafana.ini:
-                      server:
-                        domain: grafana.rollcage.io
-                        #root_url: "%(protocol)s://%(domain)s/"
-                        root_url: https://grafana.rollcage.io/grafana/
-                        serve_from_sub_path: true
                     grafana:
+                      grafana.ini:
+                        server:
+                          domain: grafana.rollcage.io
+                          #root_url: "%(protocol)s://%(domain)s/"
+                          root_url: https://grafana.rollcage.io/grafana/
+                          serve_from_sub_path: true
                       ingress:
                         ingressClassName: nginx
                         enabled: true
