@@ -51,7 +51,7 @@ spec:
                                     name: monitoring-service-grafana
                                     port:
                                       number: 80
-                                path: /
+                                path: /grafana
                                 pathType: Prefix
               {{- end }}
   template:
