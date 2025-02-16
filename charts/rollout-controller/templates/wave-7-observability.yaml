@@ -30,7 +30,7 @@ spec:
                         server:
                           domain: rollcage.grafana.io
                           #root_url: "%(protocol)s://%(domain)s/"
-                          root_url: http://rollcage.grafana.io/grafana/
+                          root_url: https://rollcage.grafana.io/grafana/
                           serve_from_sub_path: true
                     extraManifests:
                       - apiVersion: networking.k8s.io/v1
@@ -38,7 +38,7 @@ spec:
                         metadata:
                           annotations:
                             nginx.ingress.kubernetes.io/rewrite-target: /
-                            nginx.ingress.kubernetes.io/ssl-redirect: "false"
+                            nginx.ingress.kubernetes.io/ssl-redirect: "true"
                           name: grafana-ingress
                         spec:
                           ingressClassName: nginx
@@ -51,8 +51,12 @@ spec:
                                     name: monitoring-service-grafana
                                     port:
                                       number: 80
-                                path: /grafana
+                                path: /
                                 pathType: Prefix
+                          tls:
+                            - secretName: grafana-service-cert
+                              hosts:
+                                - grafana.rollcage.io
               {{- end }}
   template:
     metadata:
