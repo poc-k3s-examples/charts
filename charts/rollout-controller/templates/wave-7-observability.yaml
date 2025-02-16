@@ -47,6 +47,7 @@ spec:
         syncOptions:
           - CreateNamespace=true
           - Validate=false
+          - ServerSideApply=true
   templatePatch: |
     spec:
       source:
