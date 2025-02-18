@@ -342,7 +342,28 @@ entries:
     urls:
     - https://github.com/poc-k3s-examples/charts/releases/download/keycloak-0.0.1/keycloak-0.0.1.tgz
     version: 0.0.1
+  knative:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-02-18T03:39:46.410190852Z"
+    description: A Helm chart for Kubernetes
+    digest: 2b80bbe25dbe1e704625fd68b1d8ed78140e4168190b972df0ea59b92c4b34ec
+    name: knative
+    type: application
+    urls:
+    - https://github.com/poc-k3s-examples/charts/releases/download/knative-0.0.1/knative-0.0.1.tgz
+    version: 0.0.1
   rollout-controller:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-02-18T03:39:46.498092634Z"
+    description: A Helm chart for Kubernetes
+    digest: f27247db7d47afd0bc8c6927df02b43bfea8fa76afa9776740e4448dd8fa39a9
+    name: rollout-controller
+    type: application
+    urls:
+    - https://github.com/poc-k3s-examples/charts/releases/download/rollout-controller-0.0.70/rollout-controller-0.0.70.tgz
+    version: 0.0.70
   - apiVersion: v2
     appVersion: 1.16.0
     created: "2025-02-16T16:48:15.248827881Z"
@@ -1033,4 +1054,4 @@ entries:
     urls:
     - https://github.com/poc-k3s-examples/charts/releases/download/rollout-controller-0.0.1/rollout-controller-0.0.1.tgz
     version: 0.0.1
-generated: "2025-02-16T16:48:15.249237705Z"
+generated: "2025-02-18T03:39:46.498370041Z"
