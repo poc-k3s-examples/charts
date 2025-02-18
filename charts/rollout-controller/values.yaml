@@ -43,3 +43,8 @@ serverless:
   enabled: true
   namespace: knative
   chartVersion: v1.17.1
+
+servicemesh: 
+  enabled: true 
+  namespace: istio-system
+  chartVersion: 1.24.3
