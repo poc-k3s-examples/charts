@@ -42,4 +42,4 @@ monitoring:
 serverless: 
   enabled: true
   namespace: knative
-  chartVersion: 0.0.1
+  chartVersion: v1.17.1

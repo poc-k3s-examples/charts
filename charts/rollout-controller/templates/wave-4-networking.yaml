@@ -21,8 +21,8 @@ spec:
                 - application: knative-service
                   namespace: "{{ .Values.serverless.namespace }}"
                   chart: 
-                    name: knative
-                    url: https://poc-k3s-examples.github.io/charts
+                    name: knative-operator
+                    url: https://knative.github.io/operator
                     version: "{{ .Values.serverless.chartVersion }}"
               {{- end }}
   template:
