@@ -38,3 +38,8 @@ monitoring:
   enabled: true
   namespace: monitoring
   chartVersion: 69.3.1
+
+serverless: 
+  enabled: true
+  namespace: knative
+  chartVersion: 0.0.1
