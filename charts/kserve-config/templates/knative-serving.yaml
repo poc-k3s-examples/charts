@@ -5,6 +5,4 @@ metadata:
 spec:
   config:
     domain:
-      rollcage.io: |
-        selector:
-          knative: true
+      "*": "rollcage.io"
