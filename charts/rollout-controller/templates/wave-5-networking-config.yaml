@@ -19,7 +19,7 @@ spec:
               elements:
               {{- if .Values.serverless.enabled }}
                 - application: knative-config
-                  namespace: "{{ .Values.serverless.namespace }}"
+                  namespace: "knative-serving"
                   wave: "-3"
                   chart: 
                     name: kserve-config
