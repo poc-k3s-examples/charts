@@ -24,7 +24,7 @@ spec:
                   chart: 
                     name: kserve-config
                     url: https://poc-k3s-examples.github.io/charts
-                    version: "0.0.1"
+                    version: "0.0.2"
               {{- end }}
   template:
     metadata:
