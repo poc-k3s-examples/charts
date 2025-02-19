@@ -356,6 +356,16 @@ entries:
   kserve-config:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-02-19T06:53:03.510345203Z"
+    description: A Helm chart for Kubernetes
+    digest: efc3f3c0b363d41092ce10ff0e237b520e36b3debed14a47e7ce8c7e9af0fd09
+    name: kserve-config
+    type: application
+    urls:
+    - https://github.com/poc-k3s-examples/charts/releases/download/kserve-config-0.0.4/kserve-config-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-02-19T06:30:38.939259548Z"
     description: A Helm chart for Kubernetes
     digest: c392dcd71f4c6bbf479dc61895e6f35eaf088783c70cd9091e90825e82b45e6b
@@ -385,6 +395,16 @@ entries:
     - https://github.com/poc-k3s-examples/charts/releases/download/kserve-config-0.0.1/kserve-config-0.0.1.tgz
     version: 0.0.1
   rollout-controller:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-02-19T06:53:03.734419353Z"
+    description: A Helm chart for Kubernetes
+    digest: d068ca5d6b1f1decf52225c334b928d39a92b579cc1dcbe66b100f38bf7af5ec
+    name: rollout-controller
+    type: application
+    urls:
+    - https://github.com/poc-k3s-examples/charts/releases/download/rollout-controller-0.0.85/rollout-controller-0.0.85.tgz
+    version: 0.0.85
   - apiVersion: v2
     appVersion: 1.16.0
     created: "2025-02-19T06:30:39.102091263Z"
@@ -1225,4 +1245,4 @@ entries:
     urls:
     - https://github.com/poc-k3s-examples/charts/releases/download/rollout-controller-0.0.1/rollout-controller-0.0.1.tgz
     version: 0.0.1
-generated: "2025-02-19T06:30:39.102506596Z"
+generated: "2025-02-19T06:53:03.734753979Z"
