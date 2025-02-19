@@ -22,7 +22,7 @@ spec:
                   namespace: "{{ .Values.serverless.namespace }}"
                   wave: "-3"
                   chart: 
-                    name: knative-config
+                    name: kserve-config
                     url: https://poc-k3s-examples.github.io/charts
                     version: "0.0.1"
               {{- end }}
