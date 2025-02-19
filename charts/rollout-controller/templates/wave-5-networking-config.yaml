@@ -1,9 +1,9 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: security
+  name: networking
   annotations:
-    argocd.argoproj.io/sync-wave: "-3"
+    argocd.argoproj.io/sync-wave: "-4"
 spec:
   goTemplate: true
   goTemplateOptions:
@@ -17,17 +17,20 @@ spec:
                   cluster: default
           - list:
               elements:
-              {{- if .Values.keycloak.enabled }}
-                - application: keycloak-service
-                  namespace: "{{ .Values.keycloak.namespace }}"
+              {{- if .Values.serverless.enabled }}
+                - application: knative-config
+                  namespace: "{{ .Values.serverless.namespace }}"
+                  wave: "-3"
                   chart: 
-                    name: keycloak
+                    name: knative-config
                     url: https://poc-k3s-examples.github.io/charts
-                    version: "{{ .Values.keycloak.chartVersion }}"
+                    version: "{{ .Values.serverless.chartVersion }}"
               {{- end }}
   template:
     metadata:
       name: "{{ `{{ .application }}` }}"
+      annotations:
+        argocd.argoproj.io/sync-wave: "{{ `{{ .wave }}` }}"
     spec:
       destination:
         namespace: "{{ `{{ .namespace }}` }}"
@@ -47,6 +50,17 @@ spec:
         syncOptions:
           - CreateNamespace=true
           - Validate=false
+      ignoreDifferences:
+        - group: admissionregistration.k8s.io
+          kind: ValidatingWebhookConfiguration
+          name: istiod-default-validator
+          jsonPointers:
+            - /webhooks
+        - group: admissionregistration.k8s.io
+          kind: ValidatingWebhookConfiguration
+          name: istio-validator-istio-system
+          jsonPointers:
+            - /webhooks
   templatePatch: |
     spec:
       source:
