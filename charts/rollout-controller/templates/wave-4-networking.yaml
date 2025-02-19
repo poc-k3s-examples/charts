@@ -82,6 +82,8 @@ spec:
         - group: rbac.authorization.k8s.io
           kind: ClusterRole
           name: knative-serving-operator-aggregated-stable
+          jsonPointers:
+            - /rules
   templatePatch: |
     spec:
       source:
