@@ -24,7 +24,7 @@ spec:
                   chart: 
                     name: knative-config
                     url: https://poc-k3s-examples.github.io/charts
-                    version: "{{ .Values.serverless.chartVersion }}"
+                    version: "0.0.1"
               {{- end }}
   template:
     metadata:
