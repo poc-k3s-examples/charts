@@ -35,3 +35,4 @@ backstage:
     extraEnvVarsSecrets:
       - postgres-credentials
       - backend-credentials
+      - service-account-token
