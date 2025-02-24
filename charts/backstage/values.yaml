@@ -1,2 +1,13 @@
-backstage:
-  
+host: rollcage.io
+
+gitlab:
+  enabled: true
+
+backend:
+  sqlite3:
+    enabled: false
+  postgres:
+    enabled: true
+
+# backstage:
+
