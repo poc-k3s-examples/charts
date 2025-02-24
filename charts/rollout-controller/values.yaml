@@ -48,3 +48,8 @@ servicemesh:
   enabled: true 
   namespace: istio-system
   chartVersion: 1.24.3
+
+backstage: 
+  enabled: true 
+  namespace: backstage
+  chartVersion: 0.0.1
