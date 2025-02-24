@@ -1,5 +1,16 @@
 apiVersion: v1
 entries:
+  backstage:
+  - apiVersion: v2
+    appVersion: 2.4.0
+    created: "2025-02-24T17:27:38.120844591Z"
+    description: A chart for deploying backstage
+    digest: 5fb2d657f1ef03458d0658b20972ec236ad711bdfde433dd19661a5e2f5f3f90
+    name: backstage
+    type: application
+    urls:
+    - https://github.com/poc-k3s-examples/charts/releases/download/backstage-0.0.1/backstage-0.0.1.tgz
+    version: 0.0.1
   crossplane-config:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -1245,4 +1256,4 @@ entries:
     urls:
     - https://github.com/poc-k3s-examples/charts/releases/download/rollout-controller-0.0.1/rollout-controller-0.0.1.tgz
     version: 0.0.1
-generated: "2025-02-19T06:53:03.734753979Z"
+generated: "2025-02-24T17:27:38.121149011Z"
