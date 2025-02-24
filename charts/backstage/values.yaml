@@ -30,3 +30,5 @@ backstage:
       #   filename: dynamic-plugins.yaml
       - configMapRef: backstage-app-config
         filename: app-config.yaml
+    extraEnvVarsSecrets:
+      - postgres-credentials
