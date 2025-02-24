@@ -9,5 +9,24 @@ backend:
   postgres:
     enabled: true
 
-# backstage:
-
+backstage:
+  backstage:
+    extraAppConfig:
+      # - configMapRef: techdocs-plugin
+      #   filename: techdocs-plugin.yaml
+      # - configMapRef: catalog-config
+      #   filename: catalog-config.yaml
+      # - configMapRef: tech-radar-plugin
+      #   filename: tech-radar-plugin.yaml
+      # - configMapRef: kubernetes-plugin
+      #   filename: kubernetes-plugin.yaml
+    # {{- if .Values.gitlab.enabled }}
+    #   - configMapRef: gitlab-plugin
+    #     filename: gitlab-plugin.yaml
+    # {{- end }}
+      # - configMapRef: argocd-plugin
+      #   filename: argocd-plugin.yaml
+      # - configMapRef: dynamic-plugins
+      #   filename: dynamic-plugins.yaml
+      - configMapRef: backstage-app-config
+        filename: app-config.yaml
