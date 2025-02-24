@@ -3,6 +3,20 @@ entries:
   backstage:
   - apiVersion: v2
     appVersion: 2.4.0
+    created: "2025-02-24T18:42:24.944351113Z"
+    dependencies:
+    - name: backstage
+      repository: https://backstage.github.io/charts
+      version: 2.4.0
+    description: A chart for deploying backstage
+    digest: 064e50469b97d3e91c27b2f14085e7c174c8ab8a081bab1429db08aed359663a
+    name: backstage
+    type: application
+    urls:
+    - https://github.com/poc-k3s-examples/charts/releases/download/backstage-0.0.6/backstage-0.0.6.tgz
+    version: 0.0.6
+  - apiVersion: v2
+    appVersion: 2.4.0
     created: "2025-02-24T18:38:04.945788643Z"
     dependencies:
     - name: backstage
@@ -1308,4 +1322,4 @@ entries:
     urls:
     - https://github.com/poc-k3s-examples/charts/releases/download/rollout-controller-0.0.1/rollout-controller-0.0.1.tgz
     version: 0.0.1
-generated: "2025-02-24T18:38:04.946040041Z"
+generated: "2025-02-24T18:42:24.944663478Z"
