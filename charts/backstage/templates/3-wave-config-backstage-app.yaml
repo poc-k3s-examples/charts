@@ -52,7 +52,7 @@ data:
       auth:
         dangerouslyDisableDefaultAuthPolicy: true
         keys:
-          - secret: ${DEVHUB_BACKEND_SECRET}
+          - secret: ${BACKSTAGE_BACKEND_SECRET}
       baseUrl: "https://backage.{{ .Values.host }}"
       listen:
         port: 7007

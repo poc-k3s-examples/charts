@@ -32,3 +32,4 @@ backstage:
         filename: app-config.yaml
     extraEnvVarsSecrets:
       - postgres-credentials
+      - backend-credentials
