@@ -32,6 +32,8 @@ backstage:
         filename: app-config.yaml
       - configMapRef: kubernetes-plugin
         filename: kubernetes-plugin.yaml
+      - configMapRef: techdocs-plugin
+        filename: techdocs-plugin.yaml
     extraEnvVarsSecrets:
       - postgres-credentials
       - backend-credentials
