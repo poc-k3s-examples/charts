@@ -38,3 +38,5 @@ backstage:
       - postgres-credentials
       - backend-credentials
       - service-account-token
+      - keycloak-credentials
+      - homelab-client-secret
