@@ -359,6 +359,16 @@ entries:
   keycloak:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-02-25T02:28:36.340187697Z"
+    description: A Helm chart for Kubernetes
+    digest: 220559043b90746a4b5212aad37ee3bdf740e6bd22330b0efad5b00783ccd502
+    name: keycloak
+    type: application
+    urls:
+    - https://github.com/poc-k3s-examples/charts/releases/download/keycloak-0.0.16/keycloak-0.0.16.tgz
+    version: 0.0.16
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-02-14T20:24:41.446149319Z"
     description: A Helm chart for Kubernetes
     digest: 3034c628d2d51192e4e015eb766363fe55e6d9633b7d0a441fc56a28d40e8c0e
@@ -1420,4 +1430,4 @@ entries:
     urls:
     - https://github.com/poc-k3s-examples/charts/releases/download/rollout-controller-0.0.1/rollout-controller-0.0.1.tgz
     version: 0.0.1
-generated: "2025-02-24T22:17:49.617663102Z"
+generated: "2025-02-25T02:28:36.340428134Z"
