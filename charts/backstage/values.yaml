@@ -3,6 +3,9 @@ host: rollcage.io
 gitlab:
   enabled: true
 
+catalogs:
+  - https://github.com/poc-examples/software-templates/blob/main/catalogs/templates.yaml
+
 backend:
   sqlite3:
     enabled: false
