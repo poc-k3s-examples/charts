@@ -14,10 +14,6 @@ backend:
 
 backstage:
   backstage:
-    image:
-      registry: docker.io
-      repository: cengleby86/backstage
-      tag: latest
     extraAppConfig:
       # - configMapRef: techdocs-plugin
       #   filename: techdocs-plugin.yaml

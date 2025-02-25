@@ -24,6 +24,10 @@ data:
             headerColor2: '#f56d6d'
             navigationIndicatorColor: '#be0000'
 
+    dynamicPlugins:
+      backend:
+        plugin-auth-backend-module-oidc-provider: {}
+
     organization:
       name: ${ORGANIZATION_NAME}
 
