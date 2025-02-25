@@ -14,7 +14,7 @@ backend:
 
 backstage:
   backstage:
-    env:
+    extraEnvVars:
       - name: BACKSTAGE_FEATURES
         value: "backend-dynamic-feature-service"
     extraAppConfig:
