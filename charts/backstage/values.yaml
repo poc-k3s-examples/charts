@@ -46,3 +46,13 @@ backstage:
       - service-account-token
       - keycloak-credentials
       - homelab-client-secret
+    extraVolumes:
+      - name: backstage-backend-script
+        configMap:
+          name: backstage-backend-script
+
+    extraVolumeMounts:
+      - name: backstage-backend-script
+        mountPath: /app/packages/backend/dist/index.cjs.js
+        subPath: index.cjs.js
+        readOnly: true
