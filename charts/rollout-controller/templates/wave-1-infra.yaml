@@ -9,68 +9,65 @@ spec:
   goTemplateOptions:
     - "missingkey=error"
   generators:
-    - matrix:
-        generators:
-          - clusters: {}
-          - list:
-              elements:
-              {{- if .Values.vault.enabled }}
-                - application: vault-service
-                  namespace: "{{ .Values.vault.namespace }}"
-                  chart: 
-                    name: vault
-                    url: https://helm.releases.hashicorp.com
-                    version: "{{ .Values.vault.chartVersion }}"
-                  values: |
-                    csi:
-                      enabled: false
-                    global:
-                      openshift: true
-                    injector:
-                      enabled: false
-                    server:
-                      dev:
-                        enabled: true
-                      enabled: true
-                      resources:
-                        requests:
-                          memory: "128Mi"
-                          cpu: "100m"
-                        limits:
-                          memory: "168Mi"
-                          cpu: "150m"
-              {{- end }}
-              {{- if .Values.external_secrets.enabled }}
-                - application: external-secrets-service
-                  namespace: "{{ .Values.external_secrets.namespace }}"
-                  chart: 
-                    name: external-secrets
-                    url: https://charts.external-secrets.io
-                    version: "{{ .Values.external_secrets.chartVersion }}"
-              {{- end }}
-              {{- if .Values.headlamp.enabled }}
-                - application: headlamp-service
-                  namespace: "{{ .Values.headlamp.namespace }}"
-                  chart: 
-                    name: headlamp
-                    url: https://headlamp-k8s.github.io/headlamp
-                    version: "{{ .Values.headlamp.chartVersion }}"
-                  values: |
-                    config:
-                      oidc:
-                        clientID: "homelab"
-                        clientSecret: "homelabclientsecret"
-                        issuerURL: "https://keycloak.rollcage.io/realms/homelab"
-                        scopes: "email,profile,groups"
-              {{- end }}
-              {{- if .Values.crossplane.enabled }}
-                - application: crossplane-service
-                  namespace: "{{ .Values.crossplane.namespace }}"
-                  chart: 
-                    name: crossplane
-                    url: https://charts.crossplane.io/stable
-                    version: "{{ .Values.crossplane.chartVersion }}"
-              {{- end }}
+    - list:
+        elements:
+        {{- if .Values.vault.enabled }}
+          - application: vault-service
+            namespace: "{{ .Values.vault.namespace }}"
+            chart: 
+              name: vault
+              url: https://helm.releases.hashicorp.com
+              version: "{{ .Values.vault.chartVersion }}"
+            values: |
+              csi:
+                enabled: false
+              global:
+                openshift: true
+              injector:
+                enabled: false
+              server:
+                dev:
+                  enabled: true
+                enabled: true
+                resources:
+                  requests:
+                    memory: "128Mi"
+                    cpu: "100m"
+                  limits:
+                    memory: "168Mi"
+                    cpu: "150m"
+        {{- end }}
+        # {{- if .Values.external_secrets.enabled }}
+        #   - application: external-secrets-service
+        #     namespace: "{{ .Values.external_secrets.namespace }}"
+        #     chart: 
+        #       name: external-secrets
+        #       url: https://charts.external-secrets.io
+        #       version: "{{ .Values.external_secrets.chartVersion }}"
+        # {{- end }}
+        # {{- if .Values.headlamp.enabled }}
+        #   - application: headlamp-service
+        #     namespace: "{{ .Values.headlamp.namespace }}"
+        #     chart: 
+        #       name: headlamp
+        #       url: https://headlamp-k8s.github.io/headlamp
+        #       version: "{{ .Values.headlamp.chartVersion }}"
+        #     values: |
+        #       config:
+        #         oidc:
+        #           clientID: "homelab"
+        #           clientSecret: "homelabclientsecret"
+        #           issuerURL: "https://keycloak.rollcage.io/realms/homelab"
+        #           scopes: "email,profile,groups"
+        # {{- end }}
+        # {{- if .Values.crossplane.enabled }}
+        #   - application: crossplane-service
+        #     namespace: "{{ .Values.crossplane.namespace }}"
+        #     chart: 
+        #       name: crossplane
+        #       url: https://charts.crossplane.io/stable
+        #       version: "{{ .Values.crossplane.chartVersion }}"
+        # {{- end }}
   template:
     metadata:
       name: "{{ `{{ .application }}` }}"
