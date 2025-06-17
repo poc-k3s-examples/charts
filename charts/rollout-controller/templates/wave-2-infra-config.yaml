@@ -1,0 +1,69 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: infrastructure-config
+  annotations:
+    argocd.argoproj.io/sync-wave: "-8"
+spec:
+  goTemplate: true
+  goTemplateOptions:
+    - "missingkey=error"
+  generators:
+    - list:
+        elements:
+        {{- if .Values.external_secrets.enabled }}
+          - application: secrets-connectors-service
+            namespace: secrets-connectors
+            wave: "-2"
+            chart: 
+              name: external-secrets-connectors
+              url: https://poc-k3s-examples.github.io/supporting-charts
+              version: "{{ .Values.external_secrets.connectors.chartVersion }}"
+            values: |
+              vault:
+                enabled: "{{ .Values.vault.enabled }}"
+                address: "{{ .Values.vault.address }}"
+              k8s:
+                enabled: "{{ .Values.external_secrets.k8sConnector.enabled }}"
+        {{- end }}
+        {{- if .Values.crossplane.enabled }}
+          - application: crossplane-config
+            namespace: crossplane-system
+            wave: "-2"
+            chart: 
+              name: crossplane-config
+              url: https://poc-k3s-examples.github.io/charts
+              version: "{{ .Values.crossplane.configVersion }}"
+        {{- end }}
+  template:
+    metadata:
+      name: "{{ `{{ .application }}` }}"
+      annotations:
+        argocd.argoproj.io/sync-wave: "{{ `{{ .wave }}` }}"
+    spec:
+      destination:
+        namespace: "{{ `{{ .namespace }}` }}"
+        server: "https://kubernetes.default.svc"
+      source:
+        chart: "{{ `{{ .chart.name }}` }}"
+        targetRevision: "{{ `{{ .chart.version }}` }}"
+        repoURL: "{{ `{{ .chart.url }}` }}"
+      project: default
+      syncPolicy:
+        automated:
+          prune: false
+          selfHeal: true
+        managedNamespaceMetadata:
+          labels:
+            argocd.argoproj.io/managed-by: "argocd"
+        syncOptions:
+          - CreateNamespace=true
+          - Validate=false
+  templatePatch: |
+    spec:
+      source:
+        helm:
+        {{ `{{- if (index . "values") }}` }}
+          values: |
+            {{ `{{- .values | nindent 12 }}` }}
+        {{ `{{- end }}` }}
