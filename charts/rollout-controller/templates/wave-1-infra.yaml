@@ -50,7 +50,7 @@ spec:
             namespace: "{{ .Values.headlamp.namespace }}"
             chart: 
               name: headlamp
-              url: https://headlamp-k8s.github.io/headlamp
+              url: https://kubernetes-sigs.github.io/headlamp
               version: "{{ .Values.headlamp.chartVersion }}"
             values: |
               config:
