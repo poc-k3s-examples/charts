@@ -37,14 +37,14 @@ spec:
                     memory: "168Mi"
                     cpu: "150m"
         {{- end }}
-        # {{- if .Values.external_secrets.enabled }}
-        #   - application: external-secrets-service
-        #     namespace: "{{ .Values.external_secrets.namespace }}"
-        #     chart: 
-        #       name: external-secrets
-        #       url: https://charts.external-secrets.io
-        #       version: "{{ .Values.external_secrets.chartVersion }}"
-        # {{- end }}
+        {{- if .Values.external_secrets.enabled }}
+          - application: external-secrets-service
+            namespace: "{{ .Values.external_secrets.namespace }}"
+            chart: 
+              name: external-secrets
+              url: https://charts.external-secrets.io
+              version: "{{ .Values.external_secrets.chartVersion }}"
+        {{- end }}
         # {{- if .Values.headlamp.enabled }}
         #   - application: headlamp-service
         #     namespace: "{{ .Values.headlamp.namespace }}"
